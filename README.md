@@ -101,3 +101,20 @@ Setup git account:
   git config --global user.email "meiyaowen@gmail.com"
   git config --global user.name "Yaowen Mei"
 ```
+
+## 8. Install Bazelisk and depot tools
+
+https://docs.bazel.build/versions/5.3.1/install-bazelisk.html (bazelisk)
+https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up (depot tools)
+
+```
+$ git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+$ go install github.com/bazelbuild/bazelisk@latest 
+```
+
+Make sure they are in PATH
+
+```
+export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/depot_tools
+```

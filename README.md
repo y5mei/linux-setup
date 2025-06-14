@@ -109,12 +109,13 @@ https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs
 
 ```
 $ git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-$ go install github.com/bazelbuild/bazelisk@latest 
+$ go install github.com/bazelbuild/bazelisk@latest
+$ go install github.com/bazelbuild/buildtools/buildifier@latest 
 ```
 
 Make sure they are in PATH
 
 ```
-export PATH=$PATH:$HOME/go/bin
-export PATH=$PATH:$HOME/depot_tools
+export PATH=$PATH:/usr/local/go/bin # GOROOT, where Go is installed
+export PATH=$PATH:$HOME/go/bin # GOPATH, where packages are installed
 ```

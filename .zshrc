@@ -1,5 +1,6 @@
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:/usr/local/go/bin # GOROOT, where Go is installed
+export PATH=$PATH:$HOME/go/bin # GOPATH, where packages are installed
 export PATH=$PATH:$HOME/depot_tools # Add depot_tools to PATH, downoad from here: https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="bira"

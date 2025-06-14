@@ -19,6 +19,51 @@ Modify ~/.zshrc file to only contain this line:
 source ~/Workspace/linux-setup/.zshrc
 ```
 
+## 3. Make wayland work for VS Code on Ubuntu
+
+We have to install vscode deb from official website, the one from snap or app centre does not work.
+
+Ref to this [link](https://www.reddit.com/r/Ubuntu/comments/1fcal0s/blurry_text_in_vs_code_ubuntu_2404/)
+
+```
+cp /usr/share/applications/code.desktop ~/.local/share/applications/code.desktop
+
+// Make change to Exec lines in this file:
+
+cat ~/.local/share/applications/code.desktop                                                     
+[Desktop Entry]
+Name=Visual Studio Code
+Comment=Code Editing. Redefined.
+GenericName=Text Editor
+Exec=/usr/share/code/code --disable-gpu --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto %F
+Icon=vscode
+Type=Application
+StartupNotify=false
+StartupWMClass=Code
+Categories=TextEditor;Development;IDE;
+MimeType=application/x-code-workspace;
+Actions=new-empty-window;
+Keywords=vscode;
+
+[Desktop Action new-empty-window]
+Name=New Empty Window
+Name[cs]=Nové prázdné okno
+Name[de]=Neues leeres Fenster
+Name[es]=Nueva ventana vacía
+Name[fr]=Nouvelle fenêtre vide
+Name[it]=Nuova finestra vuota
+Name[ja]=新しい空のウィンドウ
+Name[ko]=새 빈 창
+Name[ru]=Новое пустое окно
+Name[zh_CN]=新建空窗口
+Name[zh_TW]=開新空視窗
+Exec=/usr/share/code/code --new-window --disable-gpu --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto %F
+Icon=vscode
+```
+
+Note I also created a alias for code to include these flags in the .zshrc file so that staring code from terminal can have wayland as well.
+
+
 ## 3. Make ctrl+c/v in VS code terminal copy/paste
 
 First, you want to make sure in VS code setting, when you search `sendKeybindingsToShell`, this is not enabled.

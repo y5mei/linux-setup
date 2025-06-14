@@ -28,3 +28,6 @@ source /usr/share/doc/fzf/examples/completion.zsh
 # Enable fzf tab completion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --color=bg+:#282a36,fg:#f8f8f2,hl:#bd93f9,info:#50fa7b,prompt:#ff79c6,spinner:#ffb86c,marker:#ff5555"
+
+# Make wayland work for Ubuntu 24.04
+alias code='code --disable-gpu --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto'
